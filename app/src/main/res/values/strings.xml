@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">RunningTracker</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btn_next">Next</string>
+    <string name="btn_skip">Skip</string>
+    <string name="btn_get_started">Get Started</string>
+    <string name="desc_ob_one">Track your run within an app!</string>
+    <string name="title_ob_one">RunningTracker</string>
+    <string name="title_ob_two">Accurate Location</string>
+    <string name="desc_ob_two">View your run location with accurate location!</string>
+    <string name="title_ob_three">Run Analytics</string>
+    <string name="desc_ob_three">See an analysis of your running activity with your running data!</string>
 </resources>
