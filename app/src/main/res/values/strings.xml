@@ -19,4 +19,24 @@
         <item>Calories Burned</item>
     </string-array>
     <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyAfdY-_NFHL8W5qvl2ZmItIaT4SMzzbOmc</string>
+    <string name="menu_run">Your Run</string>
+    <string name="menu_statistics">Statistics</string>
+    <string name="menu_setting">Settings</string>
+    <string name="tv_welcome">Hello!\nPlease set up your name and weight!</string>
+    <string name="hint_name">Your Name</string>
+    <string name="tv_weight_hint">Your Weight (kg)</string>
+    <string name="tv_sort_by">Sort by:</string>
+    <string name="total_distance">Total Distance</string>
+    <string name="_0km">0km</string>
+    <string name="tv_total_time">Total Time</string>
+    <string name="tv_00_00_00">00:00:00</string>
+    <string name="tv_total_calories_burned">Total Calories Burned</string>
+    <string name="tv_0kcal">0kcal</string>
+    <string name="tv_average_speed">Average Speed</string>
+    <string name="tv_0km_h">0km/h</string>
+    <string name="btn_apply_changes">Apply Changes</string>
+    <string name="tv_00_00_00_00">00:00:00:00</string>
+    <string name="btn_start">Start</string>
+    <string name="finish_run">Finish Run</string>
+    <string name="tv_let_s_go_username">Let\'s go, USERNAME!</string>
 </resources>

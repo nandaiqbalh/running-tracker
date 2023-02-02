@@ -12,5 +12,6 @@
     <color name="second_background">#393939</color>
     <color name="main_color">#F3C306</color>
     <color name="second_color">#FFDC44</color>
+    <color name="third_color">#E4D385</color>
     <color name="color_font">#FFFFFF</color>
 </resources>

@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.nandaiqbalh.runningtracker.R
 import com.nandaiqbalh.runningtracker.databinding.FragmentSetupBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -21,7 +23,17 @@ class SetupFragment : Fragment() {
 		// Inflate the layout for this fragment
 		_binding = FragmentSetupBinding.inflate(layoutInflater, container, false)
 
+		toRunFragment()
+
 		return binding.root
+	}
+
+	private fun toRunFragment(){
+		binding.btnNext.setOnClickListener {
+
+			findNavController().navigate(R.id.action_setupFragment_to_runFragment)
+
+		}
 	}
 
 	override fun onDestroy() {

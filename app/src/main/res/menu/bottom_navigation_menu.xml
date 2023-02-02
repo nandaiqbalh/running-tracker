@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/runFragment"
+        android:enabled="true"
+        android:icon="@drawable/icon_selector_run"
+        android:title="@string/menu_run"/>
 
+    <item
+        android:id="@+id/statisticFragment"
+        android:enabled="true"
+        android:icon="@drawable/icon_selector_statistics"
+        android:title="@string/menu_statistics"/>
+
+    <item
+        android:id="@+id/settingFragment"
+        android:enabled="true"
+        android:icon="@drawable/icon_selector_setting"
+        android:title="@string/menu_setting"/>
 </menu>
