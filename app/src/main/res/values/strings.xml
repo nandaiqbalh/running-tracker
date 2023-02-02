@@ -11,4 +11,12 @@
     <string name="desc_ob_two">View your run location with accurate location!</string>
     <string name="title_ob_three">Run Analytics</string>
     <string name="desc_ob_three">See an analysis of your running activity with your running data!</string>
+    <string-array name="filter_options">
+        <item>Date</item>
+        <item>Running Time</item>
+        <item>Distance</item>
+        <item>Average Speed</item>
+        <item>Calories Burned</item>
+    </string-array>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyAfdY-_NFHL8W5qvl2ZmItIaT4SMzzbOmc</string>
 </resources>
