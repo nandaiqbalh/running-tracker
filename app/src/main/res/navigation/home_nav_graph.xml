@@ -3,11 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home_nav_graph"
-    app:startDestination="@id/onboardOneFragment2">
+    app:startDestination="@id/trackingFragment">
+
 
     <fragment
-        android:id="@+id/onboardOneFragment2"
-        android:name="com.nandaiqbalh.runningtracker.presentation.ui.onboard.fragments.OnboardOneFragment"
-        android:label="fragment_onboard_one"
-        tools:layout="@layout/fragment_onboard_one" />
+        android:id="@+id/trackingFragment"
+        android:name="com.nandaiqbalh.runningtracker.presentation.ui.home.fragments.tracking.TrackingFragment"
+        android:label="fragment_tracking"
+        tools:layout="@layout/fragment_tracking" />
 </navigation>
