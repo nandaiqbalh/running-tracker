@@ -1,5 +1,6 @@
 package com.nandaiqbalh.runningtracker.presentation.ui.home
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -11,6 +12,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.nandaiqbalh.runningtracker.R
 import com.nandaiqbalh.runningtracker.databinding.ActivityMainBinding
+import com.nandaiqbalh.runningtracker.other.Constants.ACTION_SHOW_TRACKING_FRAGMENT
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -26,11 +28,23 @@ class MainActivity : AppCompatActivity() {
 		super.onCreate(savedInstanceState)
 		_binding = ActivityMainBinding.inflate(layoutInflater)
 		setSupportActionBar(binding.toolbar)
-
 		setContentView(binding.root)
 
 		setUpBottomNavigation()
 
+		navigateToTrackingFragmentIfNeeded(intent)
+
+	}
+
+	override fun onNewIntent(intent: Intent?) {
+		super.onNewIntent(intent)
+		navigateToTrackingFragmentIfNeeded(intent)
+	}
+
+	private fun navigateToTrackingFragmentIfNeeded(intent: Intent?) {
+		if(intent?.action == ACTION_SHOW_TRACKING_FRAGMENT) {
+			navController.navigate(R.id.action_global_trackingFragment)
+		}
 	}
 
 	private fun setUpBottomNavigation(){
