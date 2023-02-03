@@ -44,7 +44,7 @@ class RunFragment : Fragment(), EasyPermissions.PermissionCallbacks{
 	private fun requestPermission(){
 
 		// if the user already accept permission, just simply return it
-		if (TrackingUtility.hasLocationPermission(requireContext())){
+		if (TrackingUtility.hasLocationPermissions(requireContext())){
 			return
 		}
 
