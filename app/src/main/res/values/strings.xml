@@ -39,4 +39,5 @@
     <string name="btn_start">Start</string>
     <string name="finish_run">Finish Run</string>
     <string name="tv_let_s_go_username">Let\'s go, USERNAME!</string>
+    <string name="tv_rationale_permission">You need to accept this permission to user this app!</string>
 </resources>
