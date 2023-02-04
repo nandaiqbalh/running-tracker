@@ -31,6 +31,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnToggleRun"
+            android:layout_width="wrap_content"
             style="@style/ObMaterialButtonPrimary"
             android:text="@string/btn_start"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -42,6 +43,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnFinishRun"
             style="@style/ObMaterialButtonPrimary"
+            android:layout_width="wrap_content"
             android:text="@string/finish_run"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
