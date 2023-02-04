@@ -21,6 +21,8 @@
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tvTimer"
             style="@style/TVTitleText"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/poppins_regular"
             android:text="@string/tv_00_00_00_00"
             android:textSize="50sp"
             app:layout_constraintBottom_toTopOf="@+id/btnToggleRun"
