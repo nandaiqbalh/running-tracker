@@ -9,11 +9,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.nandaiqbalh.runningtracker.R
 import com.nandaiqbalh.runningtracker.databinding.FragmentRunBinding
 import com.nandaiqbalh.runningtracker.other.Constants
 import com.nandaiqbalh.runningtracker.other.TrackingUtility
+import com.nandaiqbalh.runningtracker.presentation.ui.home.adapters.RunAdapter
 import com.nandaiqbalh.runningtracker.presentation.ui.home.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import pub.devrel.easypermissions.AppSettingsDialog
@@ -27,6 +30,8 @@ class RunFragment : Fragment(), EasyPermissions.PermissionCallbacks{
 
 	private val viewModel: MainViewModel by activityViewModels()
 
+	private lateinit var runAdapter: RunAdapter
+
 	override fun onCreateView(
 		inflater: LayoutInflater, container: ViewGroup?,
 		savedInstanceState: Bundle?
@@ -38,7 +43,19 @@ class RunFragment : Fragment(), EasyPermissions.PermissionCallbacks{
 
 		requestPermission()
 
+		setupRecyclerView()
+
+		viewModel.runsSortedByDate.observe(viewLifecycleOwner, Observer {
+			runAdapter.submitList(it)
+		})
+
 		return binding.root
+	}
+
+	private fun setupRecyclerView() = binding.rvRuns.apply {
+		runAdapter = RunAdapter()
+		adapter = runAdapter
+		layoutManager = LinearLayoutManager(requireContext())
 	}
 
 	private fun requestPermission(){
