@@ -29,6 +29,7 @@ import com.nandaiqbalh.runningtracker.services.TrackingService
 import dagger.hilt.android.AndroidEntryPoint
 import java.lang.Math.round
 import java.util.*
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class TrackingFragment : Fragment() {
@@ -47,8 +48,8 @@ class TrackingFragment : Fragment() {
 
 	private var menu: Menu? = null
 
-	private var weight = 80f
-
+	@set:Inject
+	var weight = 80f
 	override fun onCreateView(
 		inflater: LayoutInflater, container: ViewGroup?,
 		savedInstanceState: Bundle?
