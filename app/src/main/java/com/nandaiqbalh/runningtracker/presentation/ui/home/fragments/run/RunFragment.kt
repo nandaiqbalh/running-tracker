@@ -1,13 +1,16 @@
 package com.nandaiqbalh.runningtracker.presentation.ui.home.fragments.run
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.os.Build
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
@@ -15,12 +18,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.nandaiqbalh.runningtracker.R
 import com.nandaiqbalh.runningtracker.databinding.FragmentRunBinding
 import com.nandaiqbalh.runningtracker.other.Constants
+import com.nandaiqbalh.runningtracker.other.SortType
 import com.nandaiqbalh.runningtracker.other.TrackingUtility
 import com.nandaiqbalh.runningtracker.presentation.ui.home.adapters.RunAdapter
 import com.nandaiqbalh.runningtracker.presentation.ui.home.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import pub.devrel.easypermissions.AppSettingsDialog
 import pub.devrel.easypermissions.EasyPermissions
+
 
 @AndroidEntryPoint
 class RunFragment : Fragment(), EasyPermissions.PermissionCallbacks{
@@ -45,11 +50,41 @@ class RunFragment : Fragment(), EasyPermissions.PermissionCallbacks{
 
 		setupRecyclerView()
 
-		viewModel.runsSortedByDate.observe(viewLifecycleOwner, Observer {
+		shortRun()
+
+
+		return binding.root
+	}
+
+	private fun shortRun(){
+
+		when(viewModel.sortType) {
+			SortType.DATE -> binding.spFilter.setSelection(0)
+			SortType.RUNNING_TIME -> binding.spFilter.setSelection(1)
+			SortType.DISTANCE -> binding.spFilter.setSelection(2)
+			SortType.AVG_SPEED -> binding.spFilter.setSelection(3)
+			SortType.CALORIES_BURNED -> binding.spFilter.setSelection(4)
+		}
+
+		binding.spFilter.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+			override fun onNothingSelected(p0: AdapterView<*>?) {}
+
+			override fun onItemSelected(adapterView: AdapterView<*>?, view: View?, pos: Int, id: Long) {
+				when(pos) {
+					0 -> viewModel.sortRuns(SortType.DATE)
+					1 -> viewModel.sortRuns(SortType.RUNNING_TIME)
+					2 -> viewModel.sortRuns(SortType.DISTANCE)
+					3 -> viewModel.sortRuns(SortType.AVG_SPEED)
+					4 -> viewModel.sortRuns(SortType.CALORIES_BURNED)
+				}
+
+			}
+		}
+
+		viewModel.runs.observe(viewLifecycleOwner, Observer {
 			runAdapter.submitList(it)
 		})
 
-		return binding.root
 	}
 
 	private fun setupRecyclerView() = binding.rvRuns.apply {

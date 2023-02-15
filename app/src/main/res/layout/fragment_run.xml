@@ -14,6 +14,7 @@
         android:entries="@array/filter_options"
         android:paddingTop="8dp"
         android:paddingBottom="8dp"
+        android:theme="@style/CustomSpinner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
